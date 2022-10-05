@@ -1,5 +1,12 @@
-const _ = require('lodash');
+const http = require('http');
 
-const items = [1, [2, [3, [4]]]];
-const newItems = _.flattenDeep(items);  //Will return a flat array part of lodash module
-console.log(newItems);
+const server = http.createServer((req, res) => {
+    console.log('Request Event');
+    res.end('Hello World');
+})
+
+server.listen(5000, () => {
+    console.log('Server Listening on Port: 5000');
+})
+
+//server.listen is async event
